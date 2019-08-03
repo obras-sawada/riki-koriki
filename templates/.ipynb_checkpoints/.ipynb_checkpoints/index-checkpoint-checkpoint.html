@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{textdef.title}}</title>
+    <script type="text/javascript" src="/static/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/static/index.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="shortcut icon" href="./static/img/favicon.ico">
+    <meta http-equiv=”Cache-Control” content=”no-cache”>
+</head>
+<body>
+    <input id="id_textdef" type="hidden" value="{{textdef_text}}" />
+    <div class="title"><img class="title-image" src="./static/img/title.png" alt="{{textdef.title}}" /></div>
+    <div class="main">
+        <form action="/post" method ="post" enctype = "multipart/form-data" class="form">
+            <input name="language" type="hidden" value="{{language}}" />
+            <div class="area center trim">
+                <div id="id_default" class="default">
+                    <img class="default-image" src="./static/img/main.png" />
+                    <div class="default-text">{{textdef.description}}</div>
+                </div>
+                <div id="id_selected" class="selected hidden">
+                    <img id = 'image' class="image" src="" />
+                </div>
+            </div>
+            <div class="area">
+                <div class="area">
+                    <label id='selectFile' class="button main">
+                            <div id='uploadText'>{{textdef.select_image}}</div>
+                            <input type="file" id = "file" name = "file" accept = "image/*" onchange = "isSelected()" class="hidden" />
+                    </label>
+                </div>
+                <div class="area">
+                    <input type = "submit" id = "uploadBtn" class="button main" value = "{{textdef.judge}}" onsubmit = "postFile()" disabled>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">{{textdef.copyright}}</div>
+</body>
+</html>

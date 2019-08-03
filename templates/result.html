@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{textdef.title}}</title>
+    <script type="text/javascript" src="/static/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/static/result.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="shortcut icon" href="./static/img/favicon.ico">
+    <meta http-equiv=”Cache-Control” content=”no-cache”>
+</head>
+<body>
+    <input id="id_textdef" type="hidden" value="{{textdef_text}}" />
+    <div class="title"><img class="title-image" src="./static/img/title.png" alt="{{textdef.title}}" /></div>
+    <div class="main">
+        <div class="area center trim">
+            <div class="selected">
+                <img id = 'image' class="image" src="{{filepath}}" />
+            </div>
+        </div>
+        <div class="area">
+            <div class="answer-area"><span>{{textdef.answer_description}}</span><span class="answer">{{answer}}</span></div>
+            <div id = "result" class="result">
+                <span>{{detail}}</span>
+            </div>
+        </div>
+        <div>
+            <div class="area">
+                <a href="https://twitter.com/share?url={{url}}&text={{textdef.subtitle}}（{{detail}}）&hashtags={{textdef.hashtag}}" class="button main" data-show-count="false" target="_blank">
+                    {{textdef.tweet}}
+                </a>
+            </div>
+            <div class="area">
+                <div class="button" onclick="window.location='/k?l={{language}}';">{{textdef.try_again}}</div>
+            </div>   
+        </div>
+    </div>
+    <div class="footer">{{textdef.copyright}}</div>
+</body>
+</html>
